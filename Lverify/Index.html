@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkvertise Completion Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #2f3136;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 600px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #f39c12;
+            margin-bottom: 30px;
+        }
+
+        .discord-user {
+            margin: 20px 0;
+        }
+
+        .discord-user p {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+
+        button {
+            background-color: #f39c12;
+            border: none;
+            color: white;
+            padding: 10px 16px;
+            margin: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #e67e22;
+        }
+
+        .timestamp {
+            margin: 30px 0;
+            font-size: 16px;
+            color: #888;
+        }
+
+        .discord-image {
+            margin: 30px 0;
+        }
+
+        .discord-image img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        .join-discord {
+            background-color: #7289da;
+        }
+
+        .join-discord:hover {
+            background-color: #677bc4;
+        }
+
+        .verification {
+            display: none;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .verification p {
+            color: #ffffff;
+            font-size: 18px;
+        }
+
+        .verification button {
+            background-color: #4CAF50;
+        }
+
+        .verification button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Linkvertise Completion</h1>
+        <p>Please take a screenshot of this entire page.</p>
+        <p>Message one of the moderators with the completion for a whitelist.</p>
+
+        <div class="discord-user">
+            <p>Discord user: <span id="user1">fcknck</span></p>
+            <button onclick="copyUsername('user1')">Copy Username</button>
+            <button onclick="openProfile('https://discord.com/users/993527149636100206')">Open Profile</button>
+        </div>
+
+        <div class="discord-user">
+            <p>Discord user: <span id="user2">ilikeshortys</span></p>
+            <button onclick="copyUsername('user2')">Copy Username</button>
+            <button onclick="openProfile('https://discord.com/users/1235019950515687465')">Open Profile</button>
+        </div>
+
+        <div class="timestamp">
+            <p>8/16/2024 3:58:30 PM</p>
+        </div>
+
+        <button class="join-discord" onclick="startVerification()">Join Discord</button>
+
+        <div class="verification" id="verification">
+            <p>To access the final link, please enter the key you received after joining the Discord server:</p>
+            <input type="text" id="keyInput" placeholder="Enter your key">
+            <button onclick="completeVerification()">Verify Key</button>
+        </div>
+    </div>
+
+    <script>
+        function copyUsername(userId) {
+            const username = document.getElementById(userId).textContent;
+            navigator.clipboard.writeText(username).then(() => {
+                alert('Username copied to clipboard!');
+            });
+        }
+
+        function openProfile(url) {
+            window.open(url, '_blank');
+        }
+
+        function startVerification() {
+            document.querySelector('.verification').style.display = 'block';
+            document.querySelector('.join-discord').style.display = 'none';
+        }
+
+        function completeVerification() {
+            const keyInput = document.getElementById('keyInput').value;
+            // Example key for demonstration; replace with real key validation logic
+            const validKey = '123456'; 
+
+            if (keyInput === validKey) {
+                // Redirect to the final link
+                window.location.href = 'https://link-hub.net/1218628/x-hub-free';
+            } else {
+                alert('Invalid key. Please make sure you entered the correct key.');
+            }
+        }
+    </script>
+</body>
+</html>
